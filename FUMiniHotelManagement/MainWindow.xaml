@@ -1,0 +1,199 @@
+﻿<Window x:Class="FUMiniHotelManagement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FUMiniHotelManagement"
+        mc:Ignorable="d"
+        Title="FU Mini Hotel - Admin"
+        Height="760" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResizeWithGrip"
+        Background="{StaticResource LightBlue}">
+    <Grid>
+        <!-- Header Bar -->
+        <Border Height="65" VerticalAlignment="Top"
+                Background="#1976D2" CornerRadius="0,0,16,16" 
+                Effect="{DynamicResource DropShadowEffect}">
+            <DockPanel>
+                <TextBlock Text="FU Mini Hotel Management" 
+                           FontSize="28" Foreground="White" FontWeight="Bold" 
+                           Margin="24,0,0,0" VerticalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" DockPanel.Dock="Right">
+                    <Label x:Name="lblUserName"
+                   Content="Welcome, Hân"
+                   Foreground="White"
+                   FontWeight="Bold"
+                   FontSize="16"
+                   VerticalAlignment="Center"
+                   Margin="0,0,24,0"/>
+                    <Button Content="Logout" Margin="0,0,24,0" Width="110" Click="Button_Click"/>
+                </StackPanel>
+            </DockPanel>
+        </Border>
+
+        <!-- Main Content with Tabs -->
+        <TabControl Margin="24,85,24,24"
+                    Background="{StaticResource LightBlue}"
+                    FontSize="15"
+                    Padding="0"
+                    BorderThickness="0">
+            <!-- Customers Tab -->
+            <TabItem Header="👤  Customers" >
+                <Grid>
+                    <Border Background="White" CornerRadius="8" Padding="18" Margin="8,18,8,8" 
+                            Effect="{DynamicResource DropShadowEffect}">
+                        <DockPanel>
+                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="0,0,0,8">
+                                <Button x:Name="addBtnCus" Content="➕ Add" Width="90" Click="AddCustomer_Click"/>
+                                <Button x:Name="editBtnCus" Content="📝 Edit" Width="90" Click="EditCustomer_Click"/>
+                                <Button x:Name="deleteBtnCus" Content="🗑 Delete" Width="90" Click="DeleteCustomer_Click"/>
+                                <TextBlock Text="Search by name"/>
+                                <TextBox x:Name="txSearchCustomer" Width="300" Margin="5" />
+                                <Button Content="Search" Width="150" Margin="5" Click="btnSearchCustomer_Click"/>
+                                <TextBox Width="220" Margin="18,0,0,0"/>
+                            </StackPanel>
+                            <DataGrid x:Name="CustomerDataGrid"
+                                      Margin="0,8,0,0"
+                                      AutoGenerateColumns="False"
+                                      CanUserAddRows="False"
+                                      RowHeight="40"
+                                      FontSize="14"
+                                      ColumnHeaderHeight="36"
+                                      HorizontalGridLinesBrush="#E3F2FD"
+                                      VerticalGridLinesBrush="#E3F2FD" Loaded="CustomerDataGrid_Loaded"
+                                      >
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="CustomerId" Binding="{Binding CustomerId}" Width="100"/>
+                                    <DataGridTextColumn Header="CustomerFullName" Binding="{Binding CustomerFullName}" Width="200"/>
+                                    <DataGridTextColumn Header="Telephone" Binding="{Binding Telephone}" Width="150"/>
+                                    <DataGridTextColumn Header="EmailAddress" Binding="{Binding EmailAddress}" Width="300"/>
+                                    <DataGridTextColumn Header="CustomerBirthday" Binding="{Binding CustomerBirthday}" Width="140"/>
+                                    <DataGridTextColumn Header="CustomerStatus" Binding="{Binding CustomerStatus}" Width="100"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </DockPanel>
+                    </Border>
+                </Grid>
+            </TabItem>
+            <!-- Rooms Tab -->
+            <TabItem Header="🛏️  Rooms" Height="26" Margin="-2,0,-2,0" VerticalAlignment="Top">
+                <Grid>
+                    <Border Background="White" CornerRadius="8" Padding="18" Margin="8,18,8,8" 
+                            Effect="{DynamicResource DropShadowEffect}">
+                        <DockPanel>
+                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="0,0,0,8">
+                                <Button x:Name="addBtnRoom" Content="➕ Add" Width="90" Click="AddRoom_Click"/>
+                                <Button x:Name="editBtnRoom" Content="📝 Edit" Width="90" Click="EditRoom_Click"/>
+                                <Button x:Name="deleteBtnRoom" Content="🗑 Delete" Width="90" Click="DeleteRoom_Click"/>
+                                <TextBlock Text="Search by room number"/>
+                                <TextBox x:Name="txSearchRoom" Width="300" Margin="5" />
+                                <Button Content="Search" Width="150" Margin="5" Click="btnSearchRoom_Click"/>
+                                <TextBox Width="220" Margin="18,0,0,0"/>
+                            </StackPanel>
+                            <DataGrid x:Name="RoomDataGrid"
+                                      Margin="0,8,0,0"
+                                      AutoGenerateColumns="False"
+                                      CanUserAddRows="False"
+                                      RowHeight="40"
+                                      FontSize="14"
+                                      ColumnHeaderHeight="36"
+                                      HorizontalGridLinesBrush="#E3F2FD"
+                                      VerticalGridLinesBrush="#E3F2FD"
+                                      Loaded="RoomDataGrid_Loaded"
+                                      >
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Room ID" Binding="{Binding RoomId}" Width="100"/>
+                                    <DataGridTextColumn Header="Room Number" Binding="{Binding RoomNumber}" Width="200"/>
+                                    <DataGridTextColumn Header="Room Detail Description" Binding="{Binding RoomDetailDescription}" Width="150"/>
+                                    <DataGridTextColumn Header="Room Max Capacity" Binding="{Binding RoomMaxCapacity}" Width="300"/>
+                                    <DataGridTextColumn Header="Room Type" Binding="{Binding RoomType.RoomTypeName}" Width="140"/>
+                                    <DataGridTextColumn Header="Room Status" Binding="{Binding RoomStatus}" Width="100"/>
+                                    <DataGridTextColumn Header="Room Price Per Day" Binding="{Binding RoomPricePerDay}" Width="100"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </DockPanel>
+                    </Border>
+                </Grid>
+            </TabItem>
+            <!-- Bookings Tab -->
+            <TabItem Header="📖  Bookings">
+                <Grid Loaded="BookingDataGrid_Loaded">
+                    <Border Background="White" CornerRadius="8" Padding="18" Margin="8,18,8,8" 
+                            Effect="{DynamicResource DropShadowEffect}">
+                        <DockPanel>
+                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="0,0,0,8">
+                                <Button x:Name="addBtnBooking" Content="➕ Add" Width="90" Click="AddBooking_Click"/>
+                                <Button x:Name="editBtnBooking" Content="📝 Edit" Width="90" Click="EditBooking_Click" />
+                                <Button x:Name="deleteBtnBooking" Content="🗑 Delete" Width="90" Click="DeleteBooking_Click" />
+                                <TextBlock Text="Search by Customer"/>
+                                <TextBox x:Name="txSearchBooking" Width="300" Margin="5" />
+                                <Button Content="Search" Width="150" Margin="5" Click="btnSearchBooking_Click"/>
+                                <TextBox Width="220" Margin="18,0,0,0"/>
+                            </StackPanel>
+                            <DataGrid x:Name="BookingDataGrid"
+                                      Margin="0,8,0,0"
+                                      AutoGenerateColumns="False"
+                                      CanUserAddRows="False"
+                                      RowHeight="40"
+                                      FontSize="14"
+                                      ColumnHeaderHeight="36"
+                                      HorizontalGridLinesBrush="#E3F2FD"
+                                      VerticalGridLinesBrush="#E3F2FD"
+                                      SelectionChanged="BookingDataGrid_SelectionChanged"
+                                      >
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Booking Date" Binding="{Binding BookingDate}" />
+                                    <DataGridTextColumn Header="Customer" Binding="{Binding Customer.CustomerFullName}" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <DataGrid x:Name="BookingDetailDataGrid" AutoGenerateColumns="False" 
+                                      
+                                      Margin="0,8,0,0"
+                                        CanUserAddRows="False"
+                                        RowHeight="40"
+                                        FontSize="14"
+                                        ColumnHeaderHeight="36"
+                                        HorizontalGridLinesBrush="#E3F2FD"
+                                        VerticalGridLinesBrush="#E3F2FD">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Room Name" Binding="{Binding Room.RoomType.RoomTypeName}" Width="100"/>
+                                    <DataGridTextColumn Header="Start Date" Binding="{Binding StartDate}" Width="200"/>
+                                    <DataGridTextColumn Header="End Date" Binding="{Binding EndDate}" Width="150"/>
+                                    <DataGridTextColumn Header="Actual Price" Binding="{Binding ActualPrice}" Width="300"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+                        </DockPanel>
+                    </Border>
+                </Grid>
+            </TabItem>
+            <!-- Report Tab -->
+            <TabItem Header="📊  Statistics">
+                <Grid>
+                    <Border Background="White" CornerRadius="8" Padding="18" Margin="8,18,8,8"
+                            Effect="{DynamicResource DropShadowEffect}">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                                <TextBlock Text="From:" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                                <DatePicker Width="130"/>
+                                <TextBlock Text="To:" VerticalAlignment="Center" Margin="24,0,8,0"/>
+                                <DatePicker Width="130"/>
+                                <Button Content="Generate" Width="100" Margin="28,0,0,0"/>
+                            </StackPanel>
+                            <DataGrid x:Name="ReportDataGrid"
+                                      Margin="0,15,0,0"
+                                      AutoGenerateColumns="False"
+                                      CanUserAddRows="False"
+                                      RowHeight="40"
+                                      FontSize="14"
+                                      ColumnHeaderHeight="36"
+                                      HorizontalGridLinesBrush="#E3F2FD"
+                                      VerticalGridLinesBrush="#E3F2FD"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

@@ -1,0 +1,15 @@
+C:\Users\Admin\Downloads\PRN211\FUMiniHotelManagement\FUMiniHotelManagement.DAL\bin\Debug\net8.0\FUMiniHotelManagement.DAL.deps.json
+C:\Users\Admin\Downloads\PRN211\FUMiniHotelManagement\FUMiniHotelManagement.DAL\bin\Debug\net8.0\FUMiniHotelManagement.DAL.dll
+C:\Users\Admin\Downloads\PRN211\FUMiniHotelManagement\FUMiniHotelManagement.DAL\bin\Debug\net8.0\FUMiniHotelManagement.DAL.pdb
+C:\Users\Admin\Downloads\PRN211\FUMiniHotelManagement\FUMiniHotelManagement.DAL\obj\Debug\net8.0\FUMiniHotelManagement.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Downloads\PRN211\FUMiniHotelManagement\FUMiniHotelManagement.DAL\obj\Debug\net8.0\FUMiniHotelManagement.DAL.AssemblyInfoInputs.cache
+C:\Users\Admin\Downloads\PRN211\FUMiniHotelManagement\FUMiniHotelManagement.DAL\obj\Debug\net8.0\FUMiniHotelManagement.DAL.AssemblyInfo.cs
+C:\Users\Admin\Downloads\PRN211\FUMiniHotelManagement\FUMiniHotelManagement.DAL\obj\Debug\net8.0\FUMiniHotelManagement.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\PRN211\FUMiniHotelManagement\FUMiniHotelManagement.DAL\obj\Debug\net8.0\FUMiniHotelManagement.DAL.sourcelink.json
+C:\Users\Admin\Downloads\PRN211\FUMiniHotelManagement\FUMiniHotelManagement.DAL\obj\Debug\net8.0\FUMiniHotelManagement.DAL.dll
+C:\Users\Admin\Downloads\PRN211\FUMiniHotelManagement\FUMiniHotelManagement.DAL\obj\Debug\net8.0\refint\FUMiniHotelManagement.DAL.dll
+C:\Users\Admin\Downloads\PRN211\FUMiniHotelManagement\FUMiniHotelManagement.DAL\obj\Debug\net8.0\FUMiniHotelManagement.DAL.pdb
+C:\Users\Admin\Downloads\PRN211\FUMiniHotelManagement\FUMiniHotelManagement.DAL\obj\Debug\net8.0\ref\FUMiniHotelManagement.DAL.dll
+C:\Users\Admin\Downloads\PRN211\FUMiniHotelManagement\FUMiniHotelManagement.DAL\bin\Debug\net8.0\FUMiniHotelManagement.DAL.runtimeconfig.json
+C:\Users\Admin\Downloads\PRN211\FUMiniHotelManagement\FUMiniHotelManagement.DAL\obj\Debug\net8.0\FUMiniHotelManagement.DAL.csproj.AssemblyReference.cache
+C:\Users\Admin\Downloads\PRN211\FUMiniHotelManagement\FUMiniHotelManagement.DAL\obj\Debug\net8.0\FUMiniHotelManagement.DAL.genruntimeconfig.cache
